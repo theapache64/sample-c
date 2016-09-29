@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<conio.h>
+void stcpy(char *str1, char *str2);
+void main()
+{
+char *str1, *str2;
+clrscr();
+printf(“\n\n\t ENTER A STRING…: “);
+gets(str1);
+stcpy(str1,str2);
+printf(“\n\t THE COPIED STRING IS…: “);
+puts(str2);
+getch();
+}
+void stcpy(char *str1, char *str2)
+{
+int i, len = 0;
+while(*(str1+len)!=’\0′)
+len++;
+for(i=0;i<len;i++)
+*(str2+i) = *(str1+i);
+*(str2+i) = ‘\0’;
+}

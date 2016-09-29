@@ -1,0 +1,46 @@
+/*One of the simplest techniques is a selection sort. As the name suggests, selection sort is the selection of an element and keeping it in sorted order. In selection sort, the strategy is to find the smallest number in the array and exchange it with the value in first position of array. Now, find the second smallest element in the remainder of array and exchange it with a value in the second position, carry on till you have reached the end of array. Now all the elements have been sorted in ascending order.*/
+
+#include<iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    int i,j,n,loc,temp,min,a[30];
+    cout<<"Enter the number of elements:";
+    cin>>n;
+    cout<<"\nEnter the elements\n";
+ 
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+ 
+    for(i=0;i<n-1;i++)
+    {
+        min=a[i];
+        loc=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(min>a[j])
+            {
+                min=a[j];
+                loc=j;
+            }
+        }
+ 
+        temp=a[i];
+        a[i]=a[loc];
+        a[loc]=temp;
+    }
+ 
+    cout<<"\nSorted list is as follows\n";
+    for(i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+ 
+    return 0;
+}
+
+
